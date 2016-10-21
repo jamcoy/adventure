@@ -22,4 +22,11 @@ while True:
             valid_directions[k] = possible_position
 
     direction = raw_input('which direction do you want to go?\n')
-    position = valid_directions[direction]
+    if direction in directions:
+        new_position = valid_directions.get(direction)
+        if new_position:
+            position = new_position
+        else:
+            print "Sorry, that isn't a valid direction"
+    else:
+        print "Sorry, I don't understand"
